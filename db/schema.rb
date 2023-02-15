@@ -33,4 +33,5 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_15_112915) do
   end
 
   add_foreign_key "movies", "users"
+  max_depth 10
 end
