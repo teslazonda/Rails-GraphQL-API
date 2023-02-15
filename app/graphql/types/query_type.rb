@@ -15,3 +15,36 @@ module Types
     end
   end
 end
+
+
+# Query to get all users:
+# query {
+#   user(id: 1) {
+#     firstName
+#     lastName
+#     email
+#     moviesCount
+#     movies {
+#       title
+#       year
+#       genre
+#     }
+#   }
+# }
+
+
+# Query to get a single user:
+
+# query {
+#   user(id: 1) {
+#     firstName
+#     lastName
+#     email
+#     moviesCount
+#     movies {
+#       title
+#       year
+#       genre
+#     }
+#   }
+# }
