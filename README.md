@@ -1,6 +1,6 @@
 # README
 
-Welcome to teslazonda's Rails GraphQL API. This is a basic GraphQL API implemented with the help of the Ruby on Rails framework. 
+Welcome to teslazonda's Rails GraphQL API. This is a basic [GraphQL](https://graphql.org/) API implemented with the help of the Ruby on Rails framework. 
 
 This repository was inspired by [this](https://www.honeybadger.io/blog/graphql-apis-for-rails/) blog post. Thanks to the author [David Sanchez](https://twitter.com/SanchezDav90).  
 
