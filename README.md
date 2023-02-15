@@ -1,24 +1,68 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Welcome to teslazonda's Rails GraphQL API. This is a basic GraphQL API implemented with the help of the Ruby on Rails framework. 
 
-Things you may want to cover:
+This repository was inspired by [this](https://www.honeybadger.io/blog/graphql-apis-for-rails/) blog post. Thanks to the author [David Sanchez](https://twitter.com/SanchezDav90).  
 
-* Ruby version
+### How to use
 
-* System dependencies
+The API has two models in which it stores data: `users` and `movies`.
 
-* Configuration
+Through GraphQL we can fetch data on all users, a single user, or create a new user all through the same endpoint.  
 
-* Database creation
+After starting the server, you can test queries at `http://localhost:3000/graphiql` with a friendly graphical interface.  
 
-* Database initialization
+### Sample queries: 
 
-* How to run the test suite
+To fetch all users:
+```query {
+  users {
+    firstName
+    lastName
+    email
+    moviesCount
+  }
+}
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+To fetch a single user based on their ID:
+```
+query {
+  user(id: 1) {
+    firstName
+    lastName
+    email
+    moviesCount
+    movies {
+      title
+      year
+      genre
+    }
+  }
+}
+```
 
-* Deployment instructions
+A mutation to create a new user: 
 
-* ...
+```
+mutation {
+  createUser(input: {
+    firstName: "Peter",
+    lastName: "Parker",
+    email: "spiderman@mail.com"
+  }) {
+    user {
+      id
+      firstName
+      email
+    }
+    errors
+  }
+}
+```
+
+
+
+* Ruby version=2.7.3
+
+* System dependencies=`graphql` gem and `graphiql-rails` gem for a graphical interface for testing queries.
